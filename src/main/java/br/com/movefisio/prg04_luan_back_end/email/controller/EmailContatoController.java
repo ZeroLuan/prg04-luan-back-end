@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/contato")
+@RequestMapping("/api/email")
 public class EmailContatoController {
 
     @Autowired
     private EmailService emailService;
 
-    @PostMapping
+    @PostMapping(path = "/enviar")
     public ResponseEntity<String> enviarMensagem(@RequestBody EmailContatoDTO dto) {
         log.info("Recebendo mensagem de contato:");
         emailService.enviarMensagem(dto.getNome(), dto.getEmail(), dto.getMensagem());

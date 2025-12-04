@@ -17,9 +17,12 @@ public class CadastroController {
     @Autowired
     CadastroService cadastroService;
 
-    @PostMapping
+    @PostMapping(path = "/cadastrar")
     public ResponseEntity<CadastroResponse> cadastrar(@RequestBody CadastroRequest cadastroRequest){
         return ResponseEntity.ok(cadastroService.cadastrar(cadastroRequest));
     }
+
+    // Possui apenas o EndPoint de cadastro
+    // Apenas com objetivo de demosntrar a conexao e funcionalidade de uma api rest
 
 }
